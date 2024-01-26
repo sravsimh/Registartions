@@ -28,6 +28,52 @@ p {
     margin-bottom: 0px !important;
 }
 
+.head-text {
+    text-align: center;
+}
+
+/* Upcomming Events */
+
+.upcoming-Events {
+    width: 90%;
+    background-color: rgb(255, 255, 255);
+    margin: 5% auto;
+    border-radius: 25px;
+    border: 4px solid #0C71C3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.ue-head {
+    text-align: center;
+    font-size: 30px;
+    width: fit-content;
+}
+
+.ul {
+    height: 5px;
+    background-color: #0C71C3;
+    border-radius: 10px;
+    width: 70%;
+}
+
+.events {
+    display: flex;
+    color: rgb(0, 0, 0);
+    justify-content: space-evenly;
+    padding: 2%;
+}
+
+.events h3 {
+    text-align: center;
+}
+
+.events p {
+    text-align: center;
+}
+
 /*******************
 FOOTER
 *******************/
@@ -63,9 +109,43 @@ MEDIA QUERIES
     h2 {
         font-size: large !important;
     }
+
+    .events {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgs {
+        height: 120px;
+    }
+
+    .event-1,
+    .event-2,
+    .event-3,
+    .event-4 {
+        padding: 2% 0%;
+    }
 }
 
 @media screen and (max-width: 576px) {
+    
+    
+    .events {
+        display: flex;
+        flex-direction: column;
+      }
+    
+      .imgs {
+        height: 180px;
+      }
+    
+      .event-1,
+      .event-2,
+      .event-3,
+      .event-4 {
+        padding: 2% 0%;
+      }
+    
     .participants {
         display: flex;
         overflow-x: scroll;
@@ -99,5 +179,20 @@ MEDIA QUERIES
 
     .sm-logo {
         font-size: 15px !important;
+    }
+    .events {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .imgs {
+        height: 120px;
+    }
+
+    .event-1,
+    .event-2,
+    .event-3,
+    .event-4 {
+        padding: 2% 0%;
     }
 }
