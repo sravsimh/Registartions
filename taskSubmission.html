@@ -29,6 +29,8 @@
             </div>
 
             <form class="container file-upload-form">
+                <button onclick="handleAuthClick()">Authorize</button>
+
                 <label for="file" class="file-upload-label">
                     <div class="file-upload-design">
                         <svg viewBox="0 0 640 512" height="1em">
@@ -39,8 +41,9 @@
                         <p>Drag and Drop</p>
                         <p>or</p>
                         <span class="browse-button">Browse file</span>
+                        <span class="file-name"></span>
                     </div>
-                    <input id="file" type="file" />
+                    <input id="file" accept="application/pdf" name="file" type="file" />
                 </label>
 
                 <input type="submit" value="Submit">
@@ -60,6 +63,7 @@
 
     <!-- Bootsrap Scripts -->
     <script src="Assets/Scripts/config.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="Assets/Scripts/taskSubmission.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
