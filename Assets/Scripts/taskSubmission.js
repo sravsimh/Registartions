@@ -58,8 +58,9 @@ function initClient() {
         discoveryDocs: DISCOVERY_DOCS,
         scope: SCOPES,
     }).then(() => {
-        console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+    }).catch((error) => {
+        console.error('Error initializing Google Drive API:', error);
     });
 }
 
@@ -72,32 +73,33 @@ function updateSigninStatus(isSignedIn) {
 }
 
 function handleAuthClick() {
-    gapi.auth2.getAuthInstance().signIn().then((e) => {
-        console.log(e)
+    gapi.auth2.getAuthInstance().signIn().catch((error) => {
+        console.error('Error signing in:', error);
     });
 }
 
 function handleSignoutClick() {
-    gapi.auth2.getAuthInstance().signOut();
+    gapi.auth2.getAuthInstance().signOut().catch((error) => {
+        console.error('Error signing out:', error);
+    });
 }
 
 function uploadToDrive(selectedFile) {
-
     if (selectedFile) {
         const metadata = {
-            name: file.name,
-            parent: ['103yQuDOIYeLcn5EBaxu5v7G2fLNioqhh'],
-            mimeType: file.type,
+            name: selectedFile.name,
+            parents: ['103yQuDOIYeLcn5EBaxu5v7G2fLNioqhh'], // Replace with your folder ID
+            mimeType: selectedFile.type,
         };
 
         const form = new FormData();
         form.append('metadata', new Blob([JSON.stringify(metadata)], { type: 'application/json' }));
-        form.append('file', file);
+        form.append('file', selectedFile);
 
         gapi.client.drive.files.create({
             resource: metadata,
             media: {
-                mimeType: file.type,
+                mimeType: selectedFile.type,
                 body: form,
             },
         }).then((response) => {
