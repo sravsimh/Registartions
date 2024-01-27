@@ -58,7 +58,7 @@ function initClient() {
         discoveryDocs: DISCOVERY_DOCS,
         scope: SCOPES,
     }).then(() => {
-        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+        console.log(gapi.auth2.getAuthInstance().isSignedIn.get());
         updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
     });
 }
@@ -72,7 +72,7 @@ function updateSigninStatus(isSignedIn) {
 }
 
 function handleAuthClick() {
-    gapi.auth2.getAuthInstance().signIn();
+    console.log(gapi.auth2.getAuthInstance().signIn());
 }
 
 function handleSignoutClick() {
