@@ -30,6 +30,10 @@ p {
     margin-bottom: 0px !important;
 }
 
+.description {
+    margin-top: 1rem;
+}
+
 .logo {
     width: 150px;
     padding: 20px;
@@ -299,6 +303,9 @@ form {
     width: 100%;
 }
 
+.submit {
+    margin-bottom: 1rem;
+}
 
 /*******************
 FOOTER
