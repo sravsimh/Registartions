@@ -72,7 +72,9 @@ function updateSigninStatus(isSignedIn) {
 }
 
 function handleAuthClick() {
-    console.log(gapi.auth2.getAuthInstance().signIn());
+    gapi.auth2.getAuthInstance().signIn().then((e) => {
+        console.log(e)
+    });
 }
 
 function handleSignoutClick() {
