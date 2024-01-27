@@ -49,7 +49,7 @@ const SCOPES = 'https://www.googleapis.com/auth/drive.file';
 
 let authorizeButton = document.getElementById('authorizeButton');
 let signoutButton = document.getElementById('signoutButton');
-gapi.load('client:auth2', initClient);
+// gapi.load('client:auth2', initClient);
 
 function initClient() {
     gapi.client.init({
@@ -66,6 +66,7 @@ function initClient() {
 
 function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
+        initClient();
         console.log('User is signed in.');
     } else {
         console.log('User is not signed in.');
