@@ -94,6 +94,7 @@ p {
     align-items: center;
     flex-direction: column;
 }
+
 /* membership-benefits */
 
 
@@ -101,10 +102,10 @@ p {
 
 /* New Registration */
 
-.new-registration{
+.new-registration {
     height: 40px;
     width: 200px;
-    border: 4px solid  #0C71C3;
+    border: 4px solid #0C71C3;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -113,16 +114,19 @@ p {
     align-items: center;
     font-size: 15px;
 }
-.link{
-    display:flex;
+
+.link {
+    display: flex;
     justify-content: center;
-    margin-top: 20px ;
+    margin-top: 20px;
     margin-bottom: 20px;
-    
+
 }
-.link:hover{
+
+.link:hover {
     text-decoration: none;
 }
+
 /*******************
 FOOTER
 *******************/
@@ -130,20 +134,40 @@ FOOTER
     background-color: #202332;
     color: #666;
     padding: 15px 0;
-    bottom: 0px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.msg {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed !important;
+    top: 10%;
+    right: 5%;
+    z-index: 1000;
+    opacity: 0;
+
+    i {
+        color: green;
+    }
 }
 
 .footer div {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
+
+
 
 .sm-logo {
     color: #666;
     margin: 10px;
     font-size: 20px !important;
 }
+
 
 /********************************
 MEDIA QUERIES
