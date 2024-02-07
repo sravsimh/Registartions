@@ -118,13 +118,7 @@ p {
 .link {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-.link:hover {
-    text-decoration: none;
+    margin-bottom: 3%;
 }
 
 /*******************
@@ -134,7 +128,7 @@ FOOTER
     background-color: #202332;
     color: #666;
     padding: 15px 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .msg {
