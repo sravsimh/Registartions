@@ -20,6 +20,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropdown) {
             var dropdown = this.closest('.dropdown');
             teamSize = this.textContent;
             createParticipantSections(teamSize);
+            createSpanPoints(teamSize);
             dropdown.querySelector('span').textContent = "Team size : " + this.textContent;
             dropdown.querySelector('input').setAttribute('value', this.getAttribute('id'));
         });
@@ -41,6 +42,7 @@ function createParticipantSections(numParticipants) {
     for (let i = 1; i <= numParticipants; i++) {
         const participantSection = document.createElement('div');
         participantSection.classList.add(`participant-${i}`, `participant`);
+        participantSection.id = `participant-${i}`;
 
         participantSection.innerHTML = `
         <label class="participant-label">Participant ${i}:</label>
@@ -176,6 +178,17 @@ function createParticipantSections(numParticipants) {
 }
 
 createParticipantSections(1);
+
+function createSpanPoints(numParticipants) {
+    const spanPoints = document.querySelector(".span-slider");
+    spanPoints.innerHTML = "";
+    if (numParticipants > 1) {
+        for (var i = 1; i <= numParticipants; i++) {
+            const span = `<a href="#participant-${i}" ><div class="span"></div></a>`;
+            spanPoints.innerHTML = spanPoints.innerHTML + span;
+        }
+    }
+}
 
 const firebaseConfig = {
     apiKey: config.API_KEY,
