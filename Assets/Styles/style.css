@@ -460,7 +460,7 @@ MEDIA QUERIES
 @media screen and (max-width: 576px) {
 
     .img {
-        width: 70% !important;
+        width: 100% !important;
     }
 
     .description {
