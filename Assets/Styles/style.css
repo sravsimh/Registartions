@@ -30,6 +30,24 @@ p {
     margin-bottom: 0px !important;
 }
 
+.rwabout{
+    display: flex;
+    padding-right: 0px !important;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-poster{
+    margin-top: 2vh;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.img{
+    width: 50% !important;
+}
+
 .description {
     font-size: large;
     margin-top: 1rem;
@@ -436,6 +454,10 @@ MEDIA QUERIES
 }
 
 @media screen and (max-width: 576px) {
+
+    .img{
+        width: 70% !important;
+    }
 
     .description {
         font-size: small;
