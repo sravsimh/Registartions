@@ -30,21 +30,25 @@ p {
     margin-bottom: 0px !important;
 }
 
-.rwabout{
+.rw {
+    padding-right: 0px !important;
+}
+
+.rwabout {
     display: flex;
     padding-right: 0px !important;
     justify-content: center;
     flex-direction: column;
 }
 
-.main-poster{
+.main-poster {
     margin-top: 2vh;
-    width: fit-content;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.img{
+.img {
     width: 50% !important;
 }
 
@@ -455,7 +459,7 @@ MEDIA QUERIES
 
 @media screen and (max-width: 576px) {
 
-    .img{
+    .img {
         width: 70% !important;
     }
 
