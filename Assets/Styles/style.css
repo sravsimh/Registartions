@@ -402,7 +402,7 @@ FOOTER
 *******************/
 .footer {
     background-color: #202332;
-    color: #666;
+    color: #d3d3d3;
     padding: 15px 0;
 }
 
@@ -431,7 +431,7 @@ FOOTER
 
 
 .sm-logo {
-    color: #666;
+    color: #d3d3d3;
     margin: 10px;
     font-size: 20px !important;
 }
@@ -497,6 +497,7 @@ MEDIA QUERIES
         flex-direction: column !important;
         padding: 0;
         font-size: small;
+        padding: 2vh 2vh;
     }
 
     .sm-logo {
@@ -511,6 +512,7 @@ MEDIA QUERIES
 @media screen and (max-width: 341px) {
     .footer {
         font-size: 12px !important;
+        padding: 2vh 2vh;
     }
 
     .sm-logo {
