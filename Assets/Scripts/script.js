@@ -22,6 +22,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropdown) {
             createParticipantSections(teamSize);
             createSpanPoints(teamSize);
             dropdown.querySelector('span').textContent = "Team size : " + this.textContent;
+            dropdown.style.color = 'black';
             dropdown.querySelector('input').setAttribute('value', this.getAttribute('id'));
         });
     });
@@ -171,6 +172,7 @@ function createParticipantSections(numParticipants) {
                 var dropdown1 = this.closest('.dropdown1');
                 var choice = dropdown1.querySelector(".choice").getAttribute("name");
                 dropdown1.querySelector('span').textContent = `${choice} : ` + this.textContent;
+                dropdown1.style.color = 'black';
                 dropdown1.querySelector('input').setAttribute('value', this.getAttribute('id'));
             });
         });
