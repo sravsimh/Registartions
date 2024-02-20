@@ -239,7 +239,7 @@ span.choose {
 
 .dropdown1 .select>i {
     font-size: 13px;
-    color: #000000;
+    color: #9b9b9b;
     cursor: pointer;
     transition: all .3s ease-in-out;
     float: right;
@@ -313,6 +313,7 @@ form
 .participant-label {
     color: #0C71C3;
     font-weight: 600;
+    font-size: 18px;
 }
 
 .participant {
@@ -364,13 +365,6 @@ form {
     align-items: center;
     width: 100%;
 }
-
-/* .circle {
-    background-color: #555;
-    border-radius: 50%;
-    height: 15px;
-    width: 15px;
-} */
 
 .span-slider {
     display: flex;
