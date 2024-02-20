@@ -193,7 +193,7 @@ span.choose {
     padding: 5px;
     transition: all .2s ease-in-out;
     cursor: pointer;
-    color: #9b9b9b;
+    color: #000000;
 }
 
 .dropdown .dropdown-menu {
