@@ -171,8 +171,7 @@ function createParticipantSections(numParticipants) {
             item.addEventListener('click', function () {
                 var dropdown1 = this.closest('.dropdown1');
                 var choice = dropdown1.querySelector(".choice").getAttribute("name");
-                dropdown1.querySelector('span').textContent = `${choice} : ` + this.textContent;
-                dropdown1.style.color = 'black';
+                dropdown1.querySelector('span').innerHTML = `${choice} : ` + `<span class="selection">${this.textContent}</span>`;
                 dropdown1.querySelector('input').setAttribute('value', this.getAttribute('id'));
             });
         });

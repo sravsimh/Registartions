@@ -59,8 +59,8 @@ p {
     height: 5px;
     background-color: #0C71C3;
     border-radius: 10px;
-    width: 70%;
-    margin-top: 10px;
+    width: 100%;
+    margin: 10px 0px;
 }
 
 .events {
@@ -82,7 +82,9 @@ p {
 
 .imgs {
     height: 160px;
+    width: 100%;
     margin-bottom: 10px;
+    border-radius: 20px;
 }
 
 .event-1,
@@ -165,7 +167,7 @@ FOOTER
 MEDIA QUERIES
 ********************************/
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 426px) {
     .logo {
         width: 100px;
         padding: 5px;

@@ -18,6 +18,11 @@ select:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+.selection {
+    color: #000000 !important;
+    font-weight: 400;
+}
+
 h2 {
     color: #0C71C3;
     font-weight: bolder !important;
@@ -150,6 +155,10 @@ span.choose {
     color: #555;
     padding: 5px 0 10px;
     display: inherit
+}
+
+.ts {
+    color: #000000;
 }
 
 .ts,
