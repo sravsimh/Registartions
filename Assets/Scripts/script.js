@@ -263,7 +263,6 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
     if (flag) {
         return;
     }
-    msg.style.opacity = 1;
     await teams
         .add({
             teamSize: teamSize,
@@ -288,7 +287,7 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
             html: `<p><a href="https://drive.google.com/file/d/18MKO7nuNDOZswFVoDsVRVrU4hADcWJUB/view?usp=sharing">Click here</a> to download Invitaion.</p>`
         }
     });
+    msg.style.opacity = 1;
     localStorage.clear;
-    await sleep(4000);
     window.location.href = "About.html";
 });
