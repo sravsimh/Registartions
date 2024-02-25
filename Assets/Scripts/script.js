@@ -204,7 +204,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true });
-const teams = db.collection("teams");
+const teams = db.collection("teams1");
 const mail = db.collection("mail");
 
 document.querySelector(".submit").addEventListener("click", async (e) => {
