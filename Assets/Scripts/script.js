@@ -291,8 +291,41 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
 
             //     }
             // ],
-            subject: "Hello from Sai!!!",
-            html: `<p><a href="https://drive.google.com/file/d/18MKO7nuNDOZswFVoDsVRVrU4hADcWJUB/view?usp=sharing">Click here</a> to download Invitaion.</p>`
+            subject: " CONFIRMATION MAIL FOR WORKSHOP ON IMAGE PROCESSING USING MATLAB | IEEE - VBIT SB",
+            html: `<pre>Dear ${users[0]} & ${users[1]},
+
+            Greetings from Communications Society | IEEE - VBIT SB
+            Congratulations
+            <b>“Diligence illuminates the path of exceptional proficiency."</b>
+            We are delighted to inform that you have successfully registered for the two-day event, “Workshop on Image Processing using MATLAB”.
+            Kindly refer to the following details of the worksho
+            <b>Day-1:</b>
+            <b>Date</b>: 28th February, 2024.
+            <b>Time</b>: 9:50 AM.
+            <b>Venue</b>: Nalanda Auditorium, Vignana Bharathi Institute of Technology.
+            You will be introduced to basic techniques of image processing such as representing digital images, spatial and gray level resolution
+            <b>Day-2:</b>
+            <b>Date</b>: 29 th February, 2024
+            <b>Time</b>: 9:50 AM.
+            <b>Venue</b>: Nalanda Auditorium, Vignana Bharathi Institute of Technology
+            You will be acquainted with advanced techniques of image processing such as image filtering, image thresholding and edge detection
+            This workshop bestows a platform to enhance your skills in image processing and attain an advanced level of expertise in MATLAB programming
+            Download MATLAB from:
+            Mac: <a href="https://bit.ly/MATLAB_Mac">bit.ly/MATLAB_Mac</a>
+            Windows: <a href="https://bit.ly/MATLAB_Windows">bit.ly/MATLAB_Windows</a>
+            <b>Note</b>: One laptop per team is required.
+            In case of any queries, contact us at:
+            Nihanth: +91 9346100873
+            Nithish: +91 998992800
+            For further information, kindly visit our website
+            https://ieeevbitsb.in
+            Follow us on social media for the latest updates.
+            Instagram: https://instagram.com/ieee_vbitsb
+            Facebook: https://www.facebook.com/ieeevbitsb/
+            LinkedIn: https://www.linkedin.com/company/ieee-vbit-sb/ 
+            Thank you.
+            Regards,
+            ComSoc | IEEE - VBIT SB.</pre>`
         }
     });
     msg.style.opacity = 1;
