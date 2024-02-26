@@ -1,5 +1,16 @@
-var teamSize = 1;
+var teamSize = 2;
 var msg = document.querySelector(".msg");
+
+function createSpanPoints(numParticipants) {
+    const spanPoints = document.querySelector(".span-slider");
+    spanPoints.innerHTML = "";
+    if (numParticipants > 1) {
+        for (var i = 1; i <= numParticipants; i++) {
+            const span = `<a href="#participant-${i}" ><div class="span"></div></a>`;
+            spanPoints.innerHTML = spanPoints.innerHTML + span;
+        }
+    }
+}
 
 // Dropdown Menu Team size
 document.querySelectorAll('.dropdown').forEach(function (dropdown) {
@@ -11,6 +22,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropdown) {
     });
 
     dropdown.addEventListener('focusout', function () {
+        console.log("focusout")
         this.classList.remove('active');
         this.querySelector('.dropdown-menu').style.display = 'none';
     });
@@ -20,7 +32,6 @@ document.querySelectorAll('.dropdown').forEach(function (dropdown) {
             var dropdown = this.closest('.dropdown');
             teamSize = this.textContent;
             createParticipantSections(teamSize);
-            createSpanPoints(teamSize);
             dropdown.querySelector('span').textContent = "Team size : " + this.textContent;
             dropdown.style.color = 'black';
             dropdown.querySelector('input').setAttribute('value', this.getAttribute('id'));
@@ -168,6 +179,10 @@ function createParticipantSections(numParticipants) {
         });
 
         dropdown1.querySelectorAll('.dropdown-menu1 li').forEach(function (item) {
+            item.addEventListener('focusout', function () {
+                this.classList.remove('active');
+                this.querySelector('.dropdown-menu1').style.display = 'none';
+            })
             item.addEventListener('click', function () {
                 var dropdown1 = this.closest('.dropdown1');
                 var choice = dropdown1.querySelector(".choice").getAttribute("name");
@@ -176,20 +191,10 @@ function createParticipantSections(numParticipants) {
             });
         });
     });
+    createSpanPoints(numParticipants);
 }
 
-createParticipantSections(1);
-
-function createSpanPoints(numParticipants) {
-    const spanPoints = document.querySelector(".span-slider");
-    spanPoints.innerHTML = "";
-    if (numParticipants > 1) {
-        for (var i = 1; i <= numParticipants; i++) {
-            const span = `<a href="#participant-${i}" ><div class="span"></div></a>`;
-            spanPoints.innerHTML = spanPoints.innerHTML + span;
-        }
-    }
-}
+createParticipantSections(2);
 
 const firebaseConfig = {
     apiKey: config.API_KEY,
@@ -204,14 +209,16 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true });
-const teams = db.collection("teams1");
-const mail = db.collection("mail");
+const teams = db.collection("ComSocTeams");
+const mail = db.collection("ComSocMails");
 
 document.querySelector(".submit").addEventListener("click", async (e) => {
     e.preventDefault();
     let emails = [];
+    let users = [];
     for (let m = 1; m <= teamSize; m++) {
         emails.push(document.querySelector(`#p${m}f1`).value.toLowerCase());
+        users.push(document.querySelector(`#p${m}f0`).value);
     }
 
     let dict = {
@@ -272,17 +279,18 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
             localStorage.setItem("teamId", doc.id);
         });
     let teamId = localStorage.getItem("teamId");
+    data["docId"] = teamId;
     teams.doc(teamId).set(data, { merge: true });
     await mail.doc(teamId).set({
         to: emails,
         message: {
-            attachments: [
-                {
-                    filename: 'invitaion.pdf',
-                    href: 'https://firebasestorage.googleapis.com/v0/b/codequest-7ac27.appspot.com/o/invitation.pdf?alt=media',
+            // attachments: [
+            //     {
+            //         filename: 'invitaion.pdf',
+            //         href: 'https://firebasestorage.googleapis.com/v0/b/codequest-7ac27.appspot.com/o/invitation.pdf?alt=media',
 
-                }
-            ],
+            //     }
+            // ],
             subject: "Hello from Sai!!!",
             html: `<p><a href="https://drive.google.com/file/d/18MKO7nuNDOZswFVoDsVRVrU4hADcWJUB/view?usp=sharing">Click here</a> to download Invitaion.</p>`
         }
