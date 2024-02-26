@@ -31,7 +31,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropdown) {
         item.addEventListener('click', function () {
             var dropdown = this.closest('.dropdown');
             teamSize = this.textContent;
-            createParticipantSections(teamSize);
+            // createParticipantSections(teamSize);
             dropdown.querySelector('span').textContent = "Team size : " + this.textContent;
             dropdown.style.color = 'black';
             dropdown.querySelector('input').setAttribute('value', this.getAttribute('id'));
@@ -191,10 +191,10 @@ function createParticipantSections(numParticipants) {
             });
         });
     });
-    createSpanPoints(numParticipants);
+    // createSpanPoints(numParticipants);
 }
 
-createParticipantSections(2);
+// createParticipantSections(2);
 
 const firebaseConfig = {
     apiKey: config.API_KEY,

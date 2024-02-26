@@ -146,6 +146,9 @@ form feild
     box-shadow: none;
 }
 
+.que1 {
+    height: 70px;
+}
 
 /************************
 Dropdown
@@ -464,6 +467,15 @@ MEDIA QUERIES
 }
 
 @media screen and (max-width: 426px) {
+
+    .que {
+        height: 100px !important;
+    }
+
+    .que1 {
+        height: 120px !important;
+    }
+
     .logo {
         width: 100px;
         padding: 5px;
@@ -475,6 +487,10 @@ MEDIA QUERIES
 }
 
 @media screen and (max-width: 576px) {
+
+    .que {
+        height: 70px !important;
+    }
 
     .img {
         width: 100% !important;
