@@ -117,6 +117,7 @@ form feild
 .form__label {
     position: absolute;
     top: 0;
+    text-wrap: wrap;
     display: block;
     transition: 0.2s;
     font-size: 17px;
@@ -144,10 +145,6 @@ form feild
 .form__field:required,
 .form__field:invalid {
     box-shadow: none;
-}
-
-.que1 {
-    height: 70px;
 }
 
 /************************
@@ -469,11 +466,11 @@ MEDIA QUERIES
 @media screen and (max-width: 426px) {
 
     .que {
-        height: 100px !important;
+        height: 57px !important;
     }
 
     .que1 {
-        height: 120px !important;
+        height: 83px !important;
     }
 
     .logo {
@@ -486,10 +483,30 @@ MEDIA QUERIES
     }
 }
 
+@media screen and (min-width: 577px) and (max-width: 961px) {
+    .que1 {
+        height: 65px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .que {
+        height: 90px !important;
+    }
+
+    .que1 {
+        height: 135px !important;
+    }
+}
+
 @media screen and (max-width: 576px) {
 
     .que {
-        height: 70px !important;
+        height: 58px;
+    }
+
+    .que1 {
+        height: 85px;
     }
 
     .img {

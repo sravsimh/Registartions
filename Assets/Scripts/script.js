@@ -263,7 +263,16 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
             data[`p${i}${dict[j]}`] = values;
         }
     }
-
+    for (let x = 1; x <= 3; x++) {
+        let ans = document.querySelector(`#q${x}`).value;
+        document.querySelector(`#q${x}w`).classList.remove("war-active");
+        if (ans == "") {
+            document.querySelector(`#q${x}w`).classList.add("war-active");
+            var flag = 1;
+        } else {
+            data[`a${x}`] = ans;
+        }
+    }
     if (flag) {
         return;
     }
@@ -275,9 +284,6 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
         .then((doc) => {
             localStorage.setItem("teamId", doc.id);
         });
-    for (let x = 1; x <= 3; x++) {
-        data[`a${x}`] = document.querySelector(`#q${x}`).value;
-    }
     let teamId = localStorage.getItem("teamId");
     data["docId"] = teamId;
     teams.doc(teamId).set(data, { merge: true });
