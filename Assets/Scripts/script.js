@@ -164,35 +164,32 @@ function createParticipantSections(numParticipants) {
 
         participantsContainer.appendChild(participantSection);
     }
-    //Dropdown for others
-    document.querySelectorAll('.dropdown1').forEach(function (dropdown1) {
-        dropdown1.addEventListener('click', function () {
-            this.setAttribute('tabindex', 1);
-            this.classList.toggle('active');
-            var dropdownMenu1 = this.querySelector('.dropdown-menu1');
-            dropdownMenu1.style.display = (dropdownMenu1.style.display === 'block') ? 'none' : 'block';
-        });
-
-        dropdown1.addEventListener('focusout', function () {
-            this.classList.remove('active');
-            this.querySelector('.dropdown-menu1').style.display = 'none';
-        });
-
-        dropdown1.querySelectorAll('.dropdown-menu1 li').forEach(function (item) {
-            item.addEventListener('focusout', function () {
-                this.classList.remove('active');
-                this.querySelector('.dropdown-menu1').style.display = 'none';
-            })
-            item.addEventListener('click', function () {
-                var dropdown1 = this.closest('.dropdown1');
-                var choice = dropdown1.querySelector(".choice").getAttribute("name");
-                dropdown1.querySelector('span').innerHTML = `${choice} : ` + `<span class="selection">${this.textContent}</span>`;
-                dropdown1.querySelector('input').setAttribute('value', this.getAttribute('id'));
-            });
-        });
-    });
     // createSpanPoints(numParticipants);
 }
+//Dropdown for others
+document.querySelectorAll('.dropdown1').forEach(function (dropdown1) {
+    dropdown1.addEventListener('click', function () {
+        this.setAttribute('tabindex', 1);
+        this.classList.toggle('active');
+        var dropdownMenu1 = this.querySelector('.dropdown-menu1');
+        dropdownMenu1.style.display = (dropdownMenu1.style.display === 'block') ? 'none' : 'block';
+    });
+
+    dropdown1.addEventListener('focusout', function (e) {
+        console.log(e, this)
+        this.classList.remove('active');
+        this.querySelector('.dropdown-menu1').style.display = 'none';
+    });
+
+    dropdown1.querySelectorAll('.dropdown-menu1 li').forEach(function (item) {
+        item.addEventListener('click', function () {
+            var dropdown1 = this.closest('.dropdown1');
+            var choice = dropdown1.querySelector(".choice").getAttribute("name");
+            dropdown1.querySelector('span').innerHTML = `${choice} : ` + `<span class="selection">${this.textContent}</span>`;
+            dropdown1.querySelector('input').setAttribute('value', this.getAttribute('id'));
+        });
+    });
+});
 
 // createParticipantSections(2);
 
@@ -278,6 +275,9 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
         .then((doc) => {
             localStorage.setItem("teamId", doc.id);
         });
+    for (let x = 1; x <= 3; x++) {
+        data[`a${x}`] = document.querySelector(`#q${x}`).value;
+    }
     let teamId = localStorage.getItem("teamId");
     data["docId"] = teamId;
     teams.doc(teamId).set(data, { merge: true });
@@ -291,41 +291,60 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
 
             //     }
             // ],
-            subject: " CONFIRMATION MAIL FOR WORKSHOP ON IMAGE PROCESSING USING MATLAB | IEEE - VBIT SB",
-            html: `<pre>Dear ${users[0]} & ${users[1]},
-
-            Greetings from Communications Society | IEEE - VBIT SB
-            Congratulations
-            <b>“Diligence illuminates the path of exceptional proficiency."</b>
-            We are delighted to inform that you have successfully registered for the two-day event, “Workshop on Image Processing using MATLAB”.
-            Kindly refer to the following details of the worksho
-            <b>Day-1:</b>
-            <b>Date</b>: 28th February, 2024.
-            <b>Time</b>: 9:50 AM.
-            <b>Venue</b>: Nalanda Auditorium, Vignana Bharathi Institute of Technology.
-            You will be introduced to basic techniques of image processing such as representing digital images, spatial and gray level resolution
-            <b>Day-2:</b>
-            <b>Date</b>: 29 th February, 2024
-            <b>Time</b>: 9:50 AM.
-            <b>Venue</b>: Nalanda Auditorium, Vignana Bharathi Institute of Technology
-            You will be acquainted with advanced techniques of image processing such as image filtering, image thresholding and edge detection
-            This workshop bestows a platform to enhance your skills in image processing and attain an advanced level of expertise in MATLAB programming
-            Download MATLAB from:
-            Mac: <a href="https://bit.ly/MATLAB_Mac">bit.ly/MATLAB_Mac</a>
-            Windows: <a href="https://bit.ly/MATLAB_Windows">bit.ly/MATLAB_Windows</a>
-            <b>Note</b>: One laptop per team is required.
-            In case of any queries, contact us at:
-            Nihanth: +91 9346100873
-            Nithish: +91 998992800
-            For further information, kindly visit our website
-            https://ieeevbitsb.in
-            Follow us on social media for the latest updates.
-            Instagram: https://instagram.com/ieee_vbitsb
-            Facebook: https://www.facebook.com/ieeevbitsb/
-            LinkedIn: https://www.linkedin.com/company/ieee-vbit-sb/ 
-            Thank you.
-            Regards,
-            ComSoc | IEEE - VBIT SB.</pre>`
+            subject: "CONFIRMATION MAIL FOR WORKSHOP ON IMAGE PROCESSING USING MATLAB | IEEE - VBIT SB",
+            html: `<style>
+            p {
+                margin: 6px auto
+            }
+        
+            .space {
+                margin: 10px;
+            }
+        </style>
+        <p>Dear ${users[0]} & ${users[1]},</p>
+        <p>Greetings from Communications Society | IEEE - VBIT SB. </p>
+        <p>Congratulations! </p>
+        <p><b>“Diligence illuminates the path of exceptional proficiency.”</b></p>
+        <p>We are delighted to inform that you have successfully registered for the two-day event, “Workshop on Image Processing
+            using MATLAB”. </p>
+        <p>Kindly refer to the following details of the workshop. </p>
+        <p class="space"></p>
+        <p><strong>Day-1:</strong> </p>
+        <p><strong>Date</strong>: 28th February, 2024. </p>
+        <p><strong>Time</strong>: 9:50 AM. </p>
+        <p><strong>Venue</strong>: Nalanda Auditorium, Vignana Bharathi Institute of Technology. </p>
+        <p>You will be introduced to basic techniques of image processing such as representing digital images, spatial and gray
+            level resolution. </p>
+        <p class="space"></p>
+        <p><strong>Day-2:</strong></p>
+        <p><strong>Date</strong>: 29th February, 2024. </p>
+        <p><strong>Time</strong>: 9:50 AM. </p>
+        <p><strong>Venue</strong>: Nalanda Auditorium, Vignana Bharathi Institute of Technology. </p>
+        <p>You will be acquainted with advanced techniques of image processing such as image filtering, image thresholding and
+            edge detection. </p>
+        <p>This workshop bestows a platform to enhance your skills in image processing and attain an advanced level of expertise
+            in MATLAB programming. </p>
+        <p>Download MATLAB from: </p>
+        <p>Mac: <em style="background-color: yellow;">bit.ly/MATLAB_Mac</em> </p>
+        <p>Windows: <em style="background-color: yellow;">bit.ly/MATLAB_Windows</em></p>
+        <p class="space"></p>
+        <p><strong>Note</strong>: One laptop per team is required. </p>
+        <p>In case of any queries, contact us at: </p>
+        <p>Nihanth: +91 9346100873 </p>
+        <p>Nithish: +91 9989928002 </p>
+        <p class="space"></p>
+        <p>For further information, kindly visit our website: </p>
+        <p>https://ieeevbitsb.in/ </p>
+        <p class="space"></p>
+        <p>Follow us on social media for the latest updates. </p>
+        <p><strong>Instagram</strong>: <em>https://instagram.com/ieee_vbitsb</em> </p>
+        <p><strong>Facebook</strong>: <em>https://www.facebook.com/ieeevbitsb/</em> </p>
+        <p><strong>LinkedIn</strong>: <em>https://www.linkedin.com/company/ieee-vbit-sb/</em> </p>
+        <p class="space"></p>
+        <p>Thank you. </p>
+        <p class="space"></p>
+        <p><strong>Regards, </strong></p>
+        <p><strong>ComSoc | IEEE - VBIT SB.</strong></p>`
         }
     });
     msg.style.opacity = 1;
