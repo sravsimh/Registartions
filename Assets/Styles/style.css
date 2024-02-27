@@ -320,6 +320,10 @@ form
     margin-bottom: 0 !important;
 }
 
+.qw {
+    margin-top: 10px;
+}
+
 .war-active {
     color: red;
     font-size: smaller;
