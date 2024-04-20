@@ -147,6 +147,15 @@ form feild
     box-shadow: none;
 }
 
+.fields > p{
+    font-weight: 500;
+    color: #9b9b9b;
+    font-size: medium;
+}
+.fields > input{
+    padding: 0px !important;
+}
+
 /************************
 Dropdown
 ************************/
@@ -469,13 +478,13 @@ MEDIA QUERIES
 
 @media screen and (max-width: 426px) {
 
-    .que {
+    /* .que {
         height: 57px !important;
     }
 
     .que1 {
         height: 83px !important;
-    }
+    } */
 
     .logo {
         width: 100px;
@@ -487,7 +496,7 @@ MEDIA QUERIES
     }
 }
 
-@media screen and (min-width: 577px) and (max-width: 961px) {
+/* @media screen and (min-width: 577px) and (max-width: 961px) {
     .que1 {
         height: 65px;
     }
@@ -501,17 +510,17 @@ MEDIA QUERIES
     .que1 {
         height: 135px !important;
     }
-}
+} */
 
 @media screen and (max-width: 576px) {
 
-    .que {
+    /* .que {
         height: 58px;
     }
 
     .que1 {
         height: 85px;
-    }
+    } */
 
     .img {
         width: 100% !important;
