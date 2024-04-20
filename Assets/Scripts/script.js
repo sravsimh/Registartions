@@ -120,6 +120,7 @@ function createParticipantSections(numParticipants) {
                                 <li id="EEE">EEE</li>
                                 <li id="IT">IT</li>
                                 <li id="MECH">MECH</li>
+                                <li id="OTHERS">OTHERS</li>
                             </ul>
                         </div>
                     </div>
@@ -138,6 +139,7 @@ function createParticipantSections(numParticipants) {
                                 <li id="B">B</li>
                                 <li id="c">C</li>
                                 <li id="D">D</li>
+                                <li id="OTHERS">OTHERS</li>
                             </ul>
                         </div>
                     </div>
