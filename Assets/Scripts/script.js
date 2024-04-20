@@ -323,11 +323,7 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
                     .value.toLowerCase();
             }
             if (j == 3) {
-                if (
-                    values.length != 10 ||
-                    values[2] != "P" ||
-                    values[3] != "6"
-                ) {
+                if (values.length != 10) {
                     document
                         .querySelector(`#p${i}w${j}`)
                         .classList.add("war-active");
