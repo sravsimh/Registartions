@@ -379,7 +379,7 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
     data["docId"] = teamId;
     if (users[1]) {
         console.log(users[0]);
-        users[0] = users[0] + " " + "&" + " " + users[1];
+        users[0] = users[0] + " " + "and" + " " + users[1];
     }
     teams.doc(teamId).set(data, { merge: true });
     await mail.doc(teamId).set({
