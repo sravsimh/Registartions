@@ -278,8 +278,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true });
-const teams = db.collection("users");
-const mail = db.collection("mails");
+const teams = db.collection("PESTeams");
+const mail = db.collection("PESMails");
 
 document.querySelector(".submit").addEventListener("click", async (e) => {
     e.preventDefault();
