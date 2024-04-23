@@ -25,7 +25,6 @@ document.querySelectorAll(".dropdown").forEach(function (dropdown) {
     });
 
     dropdown.addEventListener("focusout", function () {
-        console.log("focusout");
         this.classList.remove("active");
         this.querySelector(".dropdown-menu").style.display = "none";
     });
@@ -378,7 +377,6 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
     let teamId = localStorage.getItem("teamId");
     data["docId"] = teamId;
     if (users[1]) {
-        console.log(users[0]);
         users[0] = users[0] + " " + "and" + " " + users[1];
     }
     teams.doc(teamId).set(data, { merge: true });
