@@ -91,7 +91,6 @@ function createParticipantSections(numParticipants) {
                             </div>
                             <input id="p${i}f2" value="" type="hidden" name="Year">
                             <ul class="dropdown-menu1">
-                                <li id="1">1</li>
                                 <li id="2">2</li>
                                 <li id="3">3</li>
                                 <li id="4">4</li>
