@@ -149,7 +149,7 @@ function createParticipantSections(numParticipants) {
                     <div class="form__group field">
                         <input type="text" class="form__field" placeholder="Roll No"
                             name="participant-${i}-roll-no" id="p${i}f3" required="">
-                        <label for="p${i}f3" class="form__label">Roll No</label>
+                        <label for="p${i}f3" class="form__label">Roll No.</label>
                     </div>
                     <p id="p${i}w3" class="war">Enter valid Roll No</p>
                 </div>
@@ -167,7 +167,7 @@ function createParticipantSections(numParticipants) {
                         <input type="text" class="form__field" placeholder="Phone No"
                          name="participant-${i}-phone-no"
                             id="p${i}f6" required="">
-                        <label for="p${i}f6" class="form__label">Phone No</label>
+                        <label for="p${i}f6" class="form__label">Phone No.</label>
                     </div>
                     <p id="p${i}w6" class="war">Enter valid Phone No</p>
                 </div>
