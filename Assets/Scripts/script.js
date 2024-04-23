@@ -479,7 +479,7 @@ document.querySelector(".submit").addEventListener("click", async (e) => {
 //                   </label> -->
 //               </div>
 //               <p id="q1w" class="war qw">Enter valid Answer</p>
-//   </div>
+//   </div >
 // </div>
 // if question field is dropdown
 // <div class="col-sm-12">
